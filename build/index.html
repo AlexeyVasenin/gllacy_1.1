@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Gllacy v1.2</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.min.css">
+
+  <!-- slick -->
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/slick-theme.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="header">
+    <div class="row">
+      <div class="col-lg-2 header__logo">
+        <img class="header__logo-img" src="img/Logo.png" alt="">
+      </div>
+
+      <!-- <nav class="nav nav-desktop col-lg-6">
+          <a class="nav-link" id="catalog" href="#">Каталог</a>
+          <a class="nav-link" id="" href="#">Доставка и оплата</a>
+          <a class="nav-link" id="About" href="#">О Компании</a>
+          <div class="modal-nav" id="modal-nav">
+            <ul>
+              <li><a href="#">Новинки</a></li>
+              <hr>
+              <li><a href="#">Сливочное</a></li>
+              <li><a href="#">Щербеты</a></li>
+              <li><a href="#">Фруктовый лед</a></li>
+              <li><a href="#">Мелорин</a></li>
+            </ul>
+          </div>
+        </nav> -->
+      <nav class="navbar navbar-expand-lg navbar-dark ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Каталог
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Новинка</a>
+                <hr>
+                <a class="dropdown-item" href="#">Сливочное</a>
+                <a class="dropdown-item" href="#">Щербеты</a>
+                <a class="dropdown-item" href="#">Фруктовый лед</a>
+                <a class="dropdown-item" href="#">Мелорин</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Доставка и оплата<span
+                  class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">О компании</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="header__btn-nav col-lg-3 col-md-5 col-12">
+        <button class="btn btn-search" id="btn-search"><img src="img/Лупа.png" alt=""></button>
+        <form class="form-inline" id='search'>
+          <input class="form-control mr-sm-2" type="search" placeholder=""
+            aria-label="Search">
+          <button type="button" class="close" id="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </form>
+        <button class="btn btn-login" id="login"><img src="img/Вход.png" alt="">Вход</button>
+        <div class="modal-singin" id="singin">
+            <div class="form-group">
+              <button type="button" class="close" id="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <form class="needs-validaion" novalidate>
+        
+                <label for="exampleInputEmail1">Почта</label>
+                <input type="email" class="form-control" id="exampleInputEmail1"
+                  aria-describedby="emailHelp" placeholder="Enter email" required>
+                <small id="emailHelp" class="form-text text-muted">Введите ваш адрес электронной
+                  почты.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Пароль</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Пароль">
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Запомнить меня</label>
+            </div>
+            <button type="submit" class="btn-singin">Вход</button>
+            </form>
+          </div>
+        <button class="btn btn-basket"><img src="img/Корзина.png" alt="">Пусто</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container banner text-center">
+
+    <div class="row slider-items">
+      <div class="slider-item">
+        <img class="icecream-l" src="img/Мороженко 1.png" alt="мороженное">
+        <img class="icecream-r" src="img/Мороженко 2.png" alt="мороженное">
+        <h1 class="title">Крем-брюле и пломбир <br> с малиновым джемом</h1>
+        <button class="btn btn-banner btn--style">Давайте оба!</button>
+      </div>
+      <div class="slider-item">
+        <img class="icecream-l" src="img/Мороженко 21.png" alt="мороженное">
+        <img class="icecream-r" src="img/Мороженко 22.png" alt="мороженное">
+        <h1 class="title">Крем-брюле и пломбир <br> с малиновым джемом</h1>
+        <button class="btn btn-banner btn--style">Давайте оба!</button>
+      </div>
+      <div class="slider-item">
+        <img class="icecream-l" src="img/Мороженко 31.png" alt="мороженное">
+        <img class="icecream-r" src="img/Мороженко 32.png" alt="мороженное">
+        <h1 class="title">Крем-брюле и пломбир <br> с малиновым джемом</h1>
+        <button class="btn btn-banner btn--style ">Давайте оба!</button>
+      </div>
+    </div>
+  </div>
+  <div class="container additive-free">
+    <div class="row">
+      <div class="col-lg-6 col-md-10 col-12 additive-raspberry">
+        <h4 class="additive-title">Малинка даром</h4>
+        <p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового
+          варенья бесплатно.
+        </p>
+        <button class="btn btn--style">Хочу варенье!</button>
+      </div>
+      <div class="col-lg-6 col-md-10 col-12 additive-choсolate">
+        <h4 class="additive-title">Шоколадки даром</h4>
+        <p>При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки
+          совершенно бесплатно.
+        </p>
+        <button class="btn btn--style">Хочу шоколадки!</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container hit-icecream text-center">
+    <div class="row slider-icecream">
+      <div class="slider-item">
+        <img src="img/1.png" alt="">
+        <h4 class="hit-title">480/кг</h4>
+        <span>Хит</span>
+        <p>Сливочное с апельсиновым джемом и цитрусовой стружкой
+        </p>
+      </div>
+      <div class="slider-item">
+        <img src="img/2.png" alt="">
+        <h4 class="hit-title">480/кг</h4>
+        <span>Хит</span>
+        <p>Сливочно-кофейное с кусочками шоколада</p>
+      </div>
+      <div class="slider-item">
+        <img src="img/3.png
+        " alt="">
+        <h4 class="hit-title">480/кг</h4>
+        <span>Хит</span>
+        <p>Сливочно-клубничное с присыпкой из белого шоколада</p>
+      </div>
+      <div class="slider-item">
+        <img src="img/4.png" alt="">
+        <h4 class="hit-title">480/кг</h4>
+        <span>Хит</span>
+        <p>Сливочное крем-брюле с карамельной подливкой</p>
+      </div>
+      <div class="slider-item">
+        <img src="img/1.png" alt="">
+        <h4 class="hit-title">480/кг</h4>
+        <span>Хит</span>
+        <p>Сливочное с апельсиновым джемом и цитрусовой стружкой</p>
+      </div>
+      <div class="slider-item">
+        <img src="img/2.png" alt="">
+        <h4 class="hit-title">480/кг</h4>
+        <span>Хит</span>
+        <p>Сливочное с апельсиновым джемом и цитрусовой стружкой</p>
+      </div>
+      <div class="slider-item">
+        <img src="img/3.png" alt="">
+        <h4 class="hit-title">480/кг</h4>
+        <span>Хит</span>
+        <p>Сливочное с апельсиновым джемом и цитрусовой стружкой</p>
+      </div>
+      <div class="slider-item">
+        <img src="img/4.png" alt="">
+        <h4 class="hit-title">480/кг</h4>
+        <span>Хит</span>
+        <p>Сливочное с апельсиновым джемом и цитрусовой стружкой</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container info-shop">
+    <div class="row">
+      <div class="col-lg-6 col-md-12">
+        <img src="img/Мороженко.png" alt="">
+        <p>Все наше мороженое изготавливается на собственном производстве, с использованием
+          современного оборудования и проверенных временем технологий.</p>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <img src="img/Корова.png" alt="">
+        <p>Закупка ингредиентов производится только у проверенных фермерских хозяйств и компаний, с
+          которыми нас связывает долговременное сотрудничество.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-12">
+        <img src="img/Листик.png" alt="">
+        <p>Для приготовления мороженого используются настоящие сливки и молоко высочайшего
+          качества. Все дополнительные ингредиенты и добавки произведены из натурального,
+          экологически чистого сырья</p>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <img src="img/Градусник.png" alt="">
+        <p>Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, которая
+          не дает мороженому растаять в пути и позволяет ему сохранить свой превосходный вкус.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container news">
+    <div class="row">
+      <div class="col-lg-6 col-12 news-blog">
+        <span>Новое в наше блоге</span>
+        <p>10 способов серивровки <br> фруктовых щербетов <br> к столу</p>
+      </div>
+      <div class="col-lg-6 col-12 email-subscr">
+        <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что
+          у нас происходит. Обещаем не спамить и не слать всякой не нужной ерунды. Честно =)
+        </p>
+        <form>
+          <div class="form-group">
+            <input type="email" class="form-control text-left" id="exampleFormControlInput1"
+              placeholder="name@example.com">
+            <button type="submit" class="btn btn-submit btn--style">Отправить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="maps">
+    <div class="">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3992.6350426854647!2d30.3182702!3d59.9766437!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469633e2b1ad2a11%3A0x971185a819704408!2z0YPQuy4g0JDQutCw0LTQtdC80LjQutCwINCf0LDQstC70L7QstCwLCA0LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywg0KDQvtGB0YHQuNGPLCAxOTcwMjI!5e0!3m2!1sru!2sua!4v1460032786100"
+        width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+  </div>
+  </div>
+  <footer class=" footer">
+    <div class="row">
+
+      <div class="col-lg-3 col-md- col-12 social-a">
+        <p></p>
+        <a href="#" class="social social--tw"></a>
+        <a href="#" class="social social--ins"></a>
+        <a href="#" class="social social--f"></a>
+        <a href="#" class="social social--vk"></a>
+      </div>
+
+
+
+      <div class="col-lg-6 col-md-8 col-12 about">
+        <span class="about-l">
+          <a href="#">Для поставщиков</a>
+          <p>О производстве</p>
+        </span>
+        <span class="about-r">
+          <a href="#">Наши документы</a>
+          <p>Экологические стандарты</p>
+        </span>
+      </div>
+
+      <div class="col-lg-3 col-md-2 col-12 about-inc">
+        <img src="img/HTML academy.png" alt="">
+        <p>Сделано в HTML Academy 2018</p>
+      </div>
+
+    </div>
+  </footer>
+
+  
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <!-- MAIN.JS -->
+  <script src="js/main.min.js"></script>
+  <!-- slider -->
+  <script src="jslib/slick.min.js"></script>
+  <!-- SETTING SLIDER -->
+  <script>
+    $(document).ready(function () {
+      $('.slider-items').slick({
+
+        centerPadding: '0px',
+        dots: true,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 3500,
+        speed: 1500
+      });
+    });
+
+    $(document).ready(function () {
+      $('.slider-icecream').slick({
+        dots: false,
+        infinite: true,
+        autoplay: true,
+        speed: 2000,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        arrows: false,
+        responsive: [{
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: false
+          }
+
+        },
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: false
+          }
+
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: false
+          }
+
+        }
+        ]
+      });
+    });
+  </script>
+</body>
+
+</html>
