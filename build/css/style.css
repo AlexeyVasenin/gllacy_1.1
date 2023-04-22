@@ -1,6 +1,6 @@
 /* Basic */
 * {
-  margin: 0 auto;
+  font-family: "Roboto-black";
 }
 * .show-modal-content {
   display: block;
@@ -9,23 +9,16 @@
   background: -webkit-gradient(linear, left top, left bottom, from(#ee5e3f), to(#db4c38));
   background: linear-gradient(to bottom, #ee5e3f, #db4c38);
 }
+* .active-page {
+  background: rgba(255, 255, 255, 0.4);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
 html body {
-  font-family: "Roboto-black";
   font-size: 1rem;
   background: -webkit-gradient(linear, left bottom, left top, from(#51665a), to(#a0bdac));
   background: linear-gradient(to top, #51665a, #a0bdac);
 }
-html body .btn--style {
-  font-family: "Roboto-black";
-  font-weight: bold;
-  color: #fff;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ee5e3f), to(#db4c38));
-  background: linear-gradient(to bottom, #ee5e3f, #db4c38);
-  border-radius: 50px;
-  -webkit-box-shadow: 1px 1px 0 1px #ac5949;
-          box-shadow: 1px 1px 0 1px #ac5949;
-}
-/* color */
 /* fonts */
 @font-face {
   font-family: 'Roboto-bold';
@@ -66,6 +59,25 @@ html body .btn--style {
 }
 .reg {
   font-family: "Roboto-regular";
+}
+/* button */
+.btn {
+  font-weight: bold;
+  color: #fff;
+}
+.btn--style {
+  font-family: "Roboto-black";
+  background: -webkit-gradient(linear, left top, left bottom, from(#ee5e3f), to(#db4c38));
+  background: linear-gradient(to bottom, #ee5e3f, #db4c38);
+  border-radius: 50px;
+  -webkit-box-shadow: 1px 1px 0 1px #ac5949;
+          box-shadow: 1px 1px 0 1px #ac5949;
+}
+.btn-filter--style {
+  background: rgba(255, 255, 255, 0.4);
+  border: 2px #fff solid;
+  outline-offset: -2px;
+  border-radius: 50px;
 }
 /* blocks */
 .header {
@@ -485,6 +497,328 @@ html body .btn--style {
   background: -webkit-gradient(linear, left top, left bottom, from(#ee5e3f), to(#db4c38));
   background: linear-gradient(to bottom, #ee5e3f, #db4c38);
 }
+.breadcrumb-box .breadcrumb-list--style {
+  background-color: transparent;
+  padding: 0;
+  margin-bottom: 0;
+}
+.breadcrumb-box .breadcrumb-list--style .breadcrumb-item {
+  font-size: .8em;
+}
+.breadcrumb-box .breadcrumb-list--style .breadcrumb-item a {
+  color: white;
+  text-decoration: underline;
+}
+.filter .sorted {
+  padding-left: 0;
+}
+.filter .sorted .__select {
+  position: relative;
+  width: 230px;
+  height: 40px;
+  margin: 0;
+}
+.filter .sorted .__select[data-state="active"] .__select__title::before {
+  -webkit-transform: translate(-3px, -50%) rotate(-45deg);
+          transform: translate(-3px, -50%) rotate(-45deg);
+}
+.filter .sorted .__select[data-state="active"] .__select__title::after {
+  -webkit-transform: translate(3px, -50%) rotate(45deg);
+          transform: translate(3px, -50%) rotate(45deg);
+}
+.filter .sorted .__select[data-state="active"] .__select__content {
+  opacity: 1;
+}
+.filter .sorted .__select[data-state="active"] .__select__label + .__select__input + .__select__label {
+  max-height: 40px;
+  border-top-width: 1px;
+}
+.filter .sorted .__select__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 8px 16px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  cursor: pointer;
+}
+.filter .sorted .__select__title::before,
+.filter .sorted .__select__title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  display: block;
+  width: 10px;
+  height: 2px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-transform: translate(-3px, -50%) rotate(45deg);
+          transform: translate(-3px, -50%) rotate(45deg);
+}
+.filter .sorted .__select__title::after {
+  -webkit-transform: translate(3px, -50%) rotate(-45deg);
+          transform: translate(3px, -50%) rotate(-45deg);
+}
+.filter .sorted .__select__title:hover::before,
+.filter .sorted .__select__title:hover::after {
+  background-color: white;
+}
+.filter .sorted .__select__content {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: calc(84%);
+  background-color: #ffffff;
+  border: 1px solid #c7ccd1;
+  border-top: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  opacity: 0;
+  z-index: 8;
+}
+.filter .sorted .__select__input {
+  display: none;
+}
+.filter .sorted .__select__input:checked + label {
+  background-color: #dedede;
+}
+.filter .sorted .__select__input:disabled + label {
+  opacity: 0.6;
+  pointer-events: none;
+}
+.filter .sorted .__select__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 40px;
+  max-height: 0;
+  padding: 0 16px;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+  overflow: hidden;
+}
+.filter .sorted .__select__label + input + .filter .sorted .__select__label {
+  border-top: 0 solid #C7CCD160;
+}
+.filter .sorted .__select__label:hover {
+  background-color: #D8093A !important;
+  color: #ffffff;
+}
+.filter--title {
+  margin: 0 auto;
+  padding-left: 1em;
+}
+.filter .fatness {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 2em;
+}
+.filter .fatness-radio + .fatness-label {
+  margin: .5em .6em;
+  cursor: pointer;
+}
+.filter .fatness-radio:not(checked) {
+  position: absolute;
+  opacity: 0;
+}
+.filter .fatness-radio:not(checked) + .fatness-label {
+  position: relative;
+  padding: 0 0 0 2em;
+}
+.filter .fatness-radio:not(checked) + .fatness-label:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.filter .fatness-radio:not(checked) + .fatness-label:after {
+  content: "";
+  position: absolute;
+  top: .25em;
+  left: .25em;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+.filter .fatness-radio:not(checked) + .fatness-label:after {
+  content: "";
+  position: absolute;
+  top: .25em;
+  left: .25em;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+.filter .fatness-radio:checked + .fatness-label:after {
+  background: #fff;
+}
+.catalog-products {
+  margin: 0 auto;
+  margin-top: 50px;
+  max-width: 92%;
+}
+.catalog-products .product-item {
+  padding: 15px;
+  border-radius: 10px;
+}
+.catalog-products .product-item #btn-add {
+  cursor: pointer;
+  position: absolute;
+  top: 5%;
+  left: 70%;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  border-radius: 50px;
+}
+.catalog-products .product-item #btn-add--hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.catalog-products .product-item #btn-add::after,
+.catalog-products .product-item #btn-add::before {
+  content: "";
+  left: 20px;
+  position: absolute;
+  border: 2px solid white;
+  border-radius: 4px;
+}
+.catalog-products .product-item #btn-add::after {
+  width: 20px;
+}
+.catalog-products .product-item #btn-add::before {
+  width: 20px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.catalog-products .product-item #price-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 55%;
+  right: 45%;
+  color: #fff;
+}
+.catalog-products .product-item #price-text #price {
+  font-size: 43px;
+}
+.catalog-products .product-item #price-text #price-weight {
+  font-size: 25px;
+  padding-top: 10px;
+}
+.catalog-products .product-item #product-title {
+  margin: 0 auto;
+  width: 80%;
+}
+.catalog-products #product-item:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+.paginator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 20px 0px;
+}
+.paginator .page {
+  padding: 5px 12px;
+  border-radius: 25px;
+  color: #fff;
+  text-decoration: none;
+}
+.line {
+  margin: 0 25px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+}
+/* Фильтр цены */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.filter-price__title {
+  padding: 0 ;
+  margin: 0;
+}
+.filter-price__input {
+  background-color: inherit;
+  height: 25px;
+  margin: 0 0;
+  padding: 0;
+  border: none;
+  border-radius: 20px;
+}
+.filter-price .range-slider__box {
+  padding: 17px 0;
+  border-radius: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.filter-price .noUi-target {
+  height: 5px;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.filter-price .noUi-target .noUi-connect {
+  background-color: white;
+}
+.filter-price .noUi-target .noUi-handle {
+  top: -10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.filter-price .noUi-target .noUi-handle::after,
+.filter-price .noUi-target .noUi-handle::before {
+  display: none;
+}
+.filter-price .noUi-target .noUi-handle.noUi-handle-upper {
+  right: -10px;
+}
+/*constans*/
+/*backgroud-color*/
+/*color-text*/
+/*mixin*/
 @media (min-width: 576px) {
   .banner {
     margin-left: 0;

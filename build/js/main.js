@@ -1,3 +1,4 @@
+'use strict'
 
 
 // var catalogLink = document.getElementById('catalog');
@@ -36,7 +37,7 @@ btnClose[0].addEventListener('click', function (evt) {
   evt.preventDefault();
   search.classList.remove('show-modal-content');
   btnSearch.classList.remove('active');
-  
+
 });
 
 btnClose[1].addEventListener('click', function (evt) {

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/style.min.css">
+
+  <!-- slick -->
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/slick-theme.css">
+  <link rel="stylesheet" href="css/nouislider.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+</head>
+<title>Shop-list</title>
+</head>
+
+<body>
+  <div class="header container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-lg-2 col-xl-2 header__logo">
+        <img class="header__logo-img" src="img/Logo.png" alt="">
+      </div>
+
+      <nav class="navbar navbar-expand-lg navbar-dark col-lg-auto col-xl-auto">
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#"
+                id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Каталог
+              </a>
+              <div class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Новинка</a>
+                <hr>
+                <a class="dropdown-item" href="shop.html">Сливочное</a>
+                <a class="dropdown-item" href="#">Щербеты</a>
+                <a class="dropdown-item" href="#">Фруктовый лед</a>
+                <a class="dropdown-item" href="#">Мелорин</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Доставка и оплата<span
+                  class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">О компании</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="header__btn-nav col-lg-6 col-xl-6 col-md-5">
+        <button class="btn btn-search" id="btn-search"><img src="img/Лупа.png"
+            alt=""></button>
+        <form class="form-inline" id='search'>
+          <input class="form-control mr-sm-2" type="search" placeholder=""
+            aria-label="Search">
+          <button type="button" class="close" id="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </form>
+        <button class="btn btn-login" id="login"><img src="img/Вход.png"
+            alt="">Вход</button>
+        <div class="modal-singin" id="singin">
+          <div class="form-group">
+            <button type="button" class="close" id="close" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <form class="needs-validaion" novalidate>
+
+              <label for="exampleInputEmail1">Почта</label>
+              <input type="email" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp" placeholder="Enter email" required>
+              <small id="emailHelp" class="form-text text-muted">Введите ваш
+                адрес электронной
+                почты.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Пароль</label>
+            <input type="password" class="form-control"
+              id="exampleInputPassword1" placeholder="Пароль">
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Запомнить
+              меня</label>
+          </div>
+          <button type="submit" class="btn-singin">Вход</button>
+          </form>
+        </div>
+        <button class="btn btn-basket"><img src="img/Корзина.png"
+            alt="">Пусто</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container breadcrumb-box" id="breadcrumb-box">
+    <div class="row justify-content-start">
+      <ol class="breadcrumb breadcrumb-list--style">
+        <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+        <li class="breadcrumb-item"><a href="#">Каталог</a></li>
+        <li class="breadcrumb-item">Сливочное</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="container title">
+    <div class="row">
+      <h1>Сливочное мороженное</h1>
+    </div>
+  </div>
+
+  <div class="container filter" id="filter">
+
+    <div class="row filter-row-one justify-content-start">
+      <div class="col-lg-3 sorted">
+        <p class="filter--title">Сортировка:</p>
+        <form class="filter__form">
+          <div class="__select" data-state="">
+            <div class="__select__title" data-default="по популярности">по
+              популярности</div>
+            <div class="__select__content">
+              <input id="singleSelect0" class="__select__input" type="radio"
+                name="singleSelect" />
+              <label for="singleSelect0" class="__select__label">по
+                популярности</label>
+              <input id="singleSelect1" class="__select__input" type="radio"
+                name="singleSelect" />
+              <label for="singleSelect1" class="__select__label">по возростанию
+                цену</label>
+              <input id="singleSelect2" class="__select__input" type="radio"
+                name="singleSelect" />
+              <label for="singleSelect2" class="__select__label">по убыванию
+                цены</label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="col-lg-3 filter-price">
+        <div class="row justify-content-start">
+          <p class="col-lg-3 filter-price__title">Цена</p>
+          <input type="number" name="" class="col-lg-2 filter-price__input"
+            id="filter-price__start">
+          <span>-</span>
+          <input type="number" name="" class="col-lg-2 filter-price__input"
+            id="filter-price__end">
+        </div>
+        <div class="row justify-content-center range-slider__box">
+          <div class="range-col col-lg-11" id="range-slider"></div>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <p class="filter--title">Жирность</p>
+        <div class="fatness">
+          <input class="fatness-radio" id="fatness-zero" type="radio" checked
+            name="fantess-filter">
+          <label class="fatness-label" for="fatness-zero">0%</label>
+          <input class="fatness-radio" id="fatness-ten" type="radio"
+            name="fantess-filter">
+          <label class="fatness-label" for="fatness-ten">до 10%</label>
+          <input class="fatness-radio" id="fatness-thirty" type="radio"
+            name="fantess-filter">
+          <label class="fatness-label" for="fatness-thirty">до 30%</label>
+          <input class="fatness-radio" id="fatness-over" type="radio"
+            name="fantess-filter">
+          <label class="fatness-label" for="fatness-over">свыше 30%</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row fitness-row-two justify-content-start">
+      <div class="col-lg-6">
+        <p class="filter--title">Наполнители</p>
+        <form action="">
+          <input id="chocolate" type="checkbox" value="" name="">
+          <label for="chocolate">шоколадные</label>
+          <input id="sugar" type="checkbox" value="" name="">
+          <label for="sugar">сахарные присыпки</label>
+          <input id="fruit" type="checkbox" value="" name="">
+          <label for="fruit">фрукты</label>
+          <input id="syrup" type="checkbox" value="" name="">
+          <label for="syrup">сиропы</label>
+          <input id="jam" type="checkbox" value="" name="">
+          <label for="jam">джемы</label>
+        </form>
+      </div>
+      <div class="col-lg-3">
+        <button class="btn btn-app btn-filter--style">Применить</button>
+        <button class="btn btn-reset btn-filter--style reset">Сбросить</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="catalog-products" class="catalog-products text-center"></div>
+
+  <template id="product-item-t">
+    <div id="product-item" class="product-item col text-center">
+      <a id="btn-add"></a>
+      <img src="" id="product-img" class="img-fluid" alt="Ice picture">
+      <span id="price-text">
+        <span id="price"></span>
+        <img id="price-img" src="" alt="">
+        <span id="price-weight"></span>
+      </span>
+      <p id="product-title" class="text-center"></p>
+    </div>
+  </template>
+
+  <div class="container">
+    <div class="row justify-content-end">
+      <div class="col-lg-2 paginator">
+        <a class="page" id="page1" href="#1">1</a>
+        <a class="page active-page" id="page2" href="#2">2</a>
+        <a class="page" id="page3" href="#3">3</a>
+        <a class="page" id="page4" href="#4">4</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="line">
+  <footer class=" footer">
+    <div class="row">
+
+      <div class="col-lg-3 col-md- col-12 social-a">
+        <p></p>
+        <a href="#" class="social social--tw"></a>
+        <a href="#" class="social social--ins"></a>
+        <a href="#" class="social social--f"></a>
+        <a href="#" class="social social--vk"></a>
+      </div>
+
+      <div class="col-lg-6 col-md-8 col-12 about">
+        <span class="about-l">
+          <a href="#">Для поставщиков</a>
+          <p>О производстве</p>
+        </span>
+        <span class="about-r">
+          <a href="#">Наши документы</a>
+          <p>Экологические стандарты</p>
+        </span>
+      </div>
+
+      <div class="col-lg-3 col-md-2 col-12 about-inc">
+        <p>Разработано by Alex V</p>
+      </div>
+
+    </div>
+  </footer>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <!-- MAIN.JS -->
+  <script src="js/main.js"></script>
+  <script src="js/shop_list.js"></script>
+  <!-- slider -->
+  <script src="jslib/slick.min.js"></script>
+  <script src="jslib/nouislider.min.js"></script>
+  <script src="js/range-slider.js"></script>
+</body>
+
+</html>

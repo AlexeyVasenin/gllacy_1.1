@@ -1,0 +1,88 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "img": "http://localhost:3005/assets/images/1.png",
+      "price": 310,
+      "priceimg": "http://localhost:3005/assets/images/Р.png",
+      "title": "Сливочное с апельсиновым джемом и цитрусовой стружкой"
+    },
+    {
+      "id": 2,
+      "img": "http://localhost:3005/assets/images/2.png",
+      "price": 380,
+      "priceimg": "http://localhost:3005/assets/images/Р.png",
+      "title": "Сливочно-клубничное с присыпкой из белого шоколада"
+    },
+    {
+      "id": 3,
+      "img": "http://localhost:3005/assets/images/2.1.png",
+      "price": 355,
+      "priceimg": "http://localhost:3005/assets/images/Р.png",
+      "title": "Сливочно-клубничное с присыпкой из белого шоколада"
+    },
+    {
+      "id": 4,
+      "img": "http://localhost:3005/assets/images/2.2.png",
+      "price": 415,
+      "priceimg": "http://localhost:3005/assets/images/Р.png",
+      "title": "Сливочное крем-брюле с карамельной подливкой"
+    },
+    {
+      "id": 5,
+      "img": "http://localhost:3005/assets/images/2.3.png",
+      "price": 325,
+      "priceimg": "http://localhost:3005/assets/images/Р.png",
+      "title": "Сливочное крем-брюле с карамельной подливкой"
+    },
+    {
+      "id": 6,
+      "img": "http://localhost:3005/assets/images/2.4.png",
+      "price": 410,
+      "priceimg": "http://localhost:3005/assets/images/Р.png",
+      "title": "Сливочно-черничное с цельными ягодами черники"
+    },
+    {
+      "id": 7,
+      "img": "http://localhost:3005/assets/images/3.png",
+      "price": 375,
+      "priceimg": "http://localhost:3005/assets/images/Р.png",
+      "title": "Сливочно-лимонное с карамельной присыпкой"
+    },
+    {
+      "id": 8,
+      "img": "http://localhost:3005/assets/images/3.1.png",
+      "price": 320,
+      "priceimg": "http://localhost:3005/assets/images/Р.png",
+      "title": "Сливочное с шоколадной стружкой"
+    },
+    {
+      "id": 8,
+      "img": "http://localhost:3005/assets/images/3.2.png",
+      "price": 440,
+      "priceimg": "http://localhost:3005/assets/images/Р.png",
+      "title": "Сливочно-ванильное с кусочками шоколада"
+    },
+    {
+      "id": 10,
+      "img": "http://localhost:3005/assets/images/3.3.png",
+      "price": 435,
+      "priceimg": "http://localhost:3005/assets/images/Р.png",
+      "title": "Сливочноe с ментоловым сиропом"
+    },
+    {
+      "id": 11,
+      "img": "http://localhost:3005/assets/images/3.4.png",
+      "price": 355,
+      "priceimg": "http://localhost:3005/assets/images/Р.png",
+      "title": "Сливочное с кусочками черного шоколада"
+    },
+    {
+      "id": 12,
+      "img": "http://localhost:3005/assets/images/4.png",
+      "price": 420,
+      "priceimg": "http://localhost:3005/assets/images/Р.png",
+      "title": "Сливочное с мятным сиропом"
+    }
+  ]
+}

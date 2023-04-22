@@ -1,114 +1,117 @@
-"use strict";
+'use strict';
 
-var gulp = require("gulp");
-var less = require("gulp-less");
-var plumber = require("gulp-plumber");
-var postcss = require("gulp-postcss");
-var autoprefixer = require("autoprefixer");
-var mqpacker = require("css-mqpacker");
-var minify = require("gulp-csso");
-var rename = require("gulp-rename");
-var imagemin = require("gulp-imagemin");
-var svgstore = require("gulp-svgstore");
-var svgmin = require("gulp-svgmin");
-var server = require("browser-sync").create();
-var run = require("run-sequence");
-var uglify = require("gulp-uglify");
-var del = require("del");
+const gulp = require('gulp');
+const less = require('gulp-less');
+const plumber = require('gulp-plumber');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const mqpacker = require('css-mqpacker');
+const minify = require('gulp-csso');
+const rename = require('gulp-rename');
+const imagemin = require('gulp-imagemin');
+const svgstore = require('gulp-svgstore');
+const svgmin = require('gulp-svgmin');
+const browserSync = require('browser-sync').create();
+const uglify = require('gulp-uglify');
+const del = require('del');
+const { src, dest, watch, series, parallel } = require('gulp');
 
-
-// MIN & CONV LESS(CSS)
-gulp.task("style", function() {
-  gulp.src("less/style.less")
-  .pipe(plumber())
-  .pipe(less())
-  .pipe(postcss([
-    autoprefixer({browsers: [
-      "last 2 version",
-      "last 2 Chrome versions",
-      "last 2 Firefox versions",
-      "last 2 Opera versions",
-      "last 2 Edge versions"
-      ]}),
-    mqpacker({
-      sort: false
-    })
+// MIN & CONV LESS TO CSS
+const style = (done) => {
+  src('less/style.less')
+    .pipe(plumber())
+    .pipe(less())
+    .pipe(postcss([
+      autoprefixer({
+        browsers: [
+          'last 2 version',
+          'last 2 Chrome versions',
+          'last 2 Firefox versions',
+          'last 2 Opera versions',
+          'last 2 Edge versions'
+        ]
+      }),
+      mqpacker({
+        sort: false
+      })
     ]))
-  .pipe(gulp.dest("build/css"))
-  .pipe(minify())
-  .pipe(rename("style.min.css"))
-  .pipe(gulp.dest("build/css"))
-  .pipe(server.stream());
-});
+    .pipe(dest('build/css'))
+    .pipe(minify())
+    .pipe(rename('style.min.css'))
+    .pipe(dest('build/css'))
+    .pipe(browserSync.stream());
+  done();
+}
 
 // MIN IMAGES
-gulp.task("images", function() {
-  return gulp.src("img/**/*.{jpg, png, gif}")
-  .pipe(imagemin([
-    imagemin.optipng({optimizationLevel: 3}),
-    imagemin.jpegtran({progressive: true})
+const images = (done) => {
+  return src('img/**/*.{jpg, png, gif}')
+    .pipe(imagemin([
+      imagemin.optipng({ optimizationLevel: 3 }),
+      imagemin.jpegtran({ progressive: true })
     ]))
-  .pipe(gulp.dest("build/img"));
-});
+    .pipe(dest('build/img'));
+  done();
+};
 
 // MIN JS
-gulp.task("minjs", function() {
-  gulp.src("js/*.js")
-  .pipe(gulp.dest("build/js"))
-  .pipe(uglify())
-  .pipe(rename("main.min.js"))
-  .pipe(gulp.dest("build/js"))
-  .pipe(server.stream());
-});
+const minjs = (done) => {
+  src('js/*.js')
+    .pipe(dest('build/js'))
+    .pipe(uglify())
+    .pipe(rename('main.min.js'))
+    .pipe(dest('build/js'))
+    .pipe(browserSync.stream());
+  done();
+};
 
-gulp.task("html", function() {
-  gulp.src("*.html")
-    .pipe(gulp.dest("build"));
-});
+const html = (done) => {
+  src('*.html')
+    .pipe(dest('build'));
+  done();
+};
 
+const dbase = (done) => {
+  src('db.json')
+    .pipe(dest('build'))
+    .pipe(browserSync.stream());
+  done();
+}
+// CLEAN FILES
+const clean = () => {
+  return del('build');
+};
 
 // COPY FILES
-gulp.task("copy", function() {
-  return gulp.src([
-    "css/*.css",
-    "fonts/**/*.{woff,woff2}",
-    "img/**",
-    "js/**",
-    "jslib/**",
-    "*.html"
-    ], {
-      base: "."
-    })
-  .pipe(gulp.dest("build"));
-});
-
-// CLEAN FILES
-gulp.task("clean", function() {
-  return del("build");
-});
-
-// RUN GULP
-gulp.task("build", function(fn) {
-  run(
-    "clean",
-    "copy",
-    "style",
-    "images",
-    "minjs",
-    fn
-    );
-});
+const copy = (done) => {
+  return src([
+    'css/*.css',
+    'fonts/**/*.{woff,woff2}',
+    'img/**',
+    'js/**',
+    'jslib/**',
+    '*.html',
+    'db.json'
+  ], {
+    base: '.'
+  })
+    .pipe(dest('build'));
+  done();
+};
 
 // SERVER
-gulp.task("serve", function() {
-  server.init({
-    server: "build",
-    // notify: false,
-    open: true,
-    // ui: false
+const serverWatch = () => {
+  browserSync.init({
+    server: {
+      baseDir: 'build',
+      open: true,
+    },
   });
 
-  gulp.watch("less/**/*.less", ["style"]);
-  gulp.watch("js/**/*.js", ["minjs"]);
-  gulp.watch("*.html", ["html"]).on("change", server.reload);
-});
+  watch('less/**/*.less', style);
+  watch('js/**/*.js', minjs);
+  watch('*.html', html).on('change', browserSync.reload);
+  watch('db.json', dbase);
+};
+
+exports.default = series(clean, copy, style, images, minjs, serverWatch);

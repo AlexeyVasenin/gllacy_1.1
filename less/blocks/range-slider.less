@@ -1,0 +1,69 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.filter-price {
+
+  &__title {
+    padding: 0 ;
+    margin: 0;
+  }
+
+  &__input {
+    background-color: inherit;
+
+    height: 25px;
+    margin: 0 0;
+    padding:0;
+    
+    
+    border: none;
+    border-radius: 20px;
+  }
+
+  .range-slider__box {
+
+    padding: 17px 0;
+    border-radius: 1.5rem;
+    background-color: @bg-element;
+  }
+
+  .noUi-target {
+    height: 5px;
+    padding: 0;
+    background-color: @bg-element;
+    border: none;
+    box-shadow: none;
+
+    .noUi-connect {
+      background-color: white;
+    }
+
+    .noUi-handle {
+      top: -10px;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+
+    .noUi-handle.noUi-handle-lower {
+      
+    }
+
+    .noUi-handle.noUi-handle-upper {
+      right: -10px;
+    }
+
+  }
+}
